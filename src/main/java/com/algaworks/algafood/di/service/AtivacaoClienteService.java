@@ -1,7 +1,9 @@
 package com.algaworks.algafood.di.service;
 
 import com.algaworks.algafood.di.modelo.Cliente;
+import com.algaworks.algafood.di.notificacao.NivelUrgencia;
 import com.algaworks.algafood.di.notificacao.Notificador;
+import com.algaworks.algafood.di.notificacao.TipoDeNotificacao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -12,7 +14,7 @@ import java.util.List;
 public class AtivacaoClienteService {
 
     @Autowired
-    @Qualifier("urgente")
+    @TipoDeNotificacao(NivelUrgencia.URGENTE)
     private Notificador notificador;
 
     public void ativarCliente(Cliente cliente) {

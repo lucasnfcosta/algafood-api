@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier("normal")
+@TipoDeNotificacao(NivelUrgencia.NORMAL)
 public class NotificadorEmail implements Notificador {
     @Override
     public void notificar(Cliente cliente, String mensagem) {
